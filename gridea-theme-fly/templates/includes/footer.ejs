@@ -1,0 +1,50 @@
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+            const pres = document.querySelectorAll('pre');
+
+            pres.forEach((pre, index) => {
+                // 创建唯一的ID
+                const uniqueId = `pre-${index + 1}`;
+                pre.id = uniqueId;
+
+                // 创建按钮
+                const button = document.createElement('button');
+                button.className = 'btn';
+                button.innerHTML = '<span>Copy</span> <span class="fa fa-copy"></span>';
+
+                // 设置 data-clipboard-target 属性
+                button.setAttribute('data-clipboard-target', `#${uniqueId}`);
+
+                // 在 pre 标签之前插入按钮
+                pre.parentNode.insertBefore(button, pre);
+            });
+        });
+    </script>
+	    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 初始化 Clipboard.js
+            new ClipboardJS('.btn');
+        });
+    </script>
+<div class="site-footer">
+  <div class="social-container">
+  
+  <a href="/post-images/1677405467178.jpg" target="_blank" title="微信"><i class="fa fa-wechat"></i></a>
+  <a href="http://wpa.qq.com/msgrd?v=3&uin=2060642520&site=qq&menu=yes" target="_blank" title="QQ"><i class="fa fa-qq"></i></a>
+  <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=6JiJhoyJh5CBqJmZxouHhQ" style="text-decoration:none;" title="电子邮件"><i class="fa fa-envelope"></i></a>
+		
+	<% ['github', 'twitter', 'weibo', 'zhihu', 'facebook'].forEach((item) => { %>
+      <% if (site.customConfig[item]) { %>
+        <a href="<%= site.customConfig[item] %>" target="_blank">
+          <i class="fa fa-<%= item %>"></i>
+        </a>
+      <% } %>
+    <% }) %>
+	  <a target="_blank" href="https://pandaoxi.github.io/csdn-blog/" title="分站（原 CSDN 文章汇总）"><i class="fa fa-chain"></i></a>
+	  <a target="_blank" href="/" style="text-decoration:none;" title="Daoxi365 主站"><i class="fa fa-home"></i></a>
+  	<a href="<%=themeConfig.domain%>/atom.xml" target="_blank" title="RSS 订阅"><i class="fa fa-rss"></i></a>
+  </div>
+  <%- themeConfig.footerInfo %><!--  | <a class="rss" href="<%= themeConfig.domain %>/atom.xml" target="_blank">RSS</a>-->
+</div>
+ <canvas width="1366" height="662" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas>
+ 

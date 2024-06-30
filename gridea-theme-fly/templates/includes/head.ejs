@@ -1,0 +1,47 @@
+<meta charset="utf-8" >
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+<title><%= siteTitle %></title>
+<meta name="description" content="<%= themeConfig.siteDescription %>">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="/animate.css">
+
+<!--<link rel="shortcut icon" href="<%= themeConfig.domain %>/favicon.ico?v=<%= site.utils.now %>">-->
+<link rel="icon" class="js-site-favicon" type="image/svg+xml" href="/tech-blog/favicon.ico">
+<link rel="stylesheet" href="/katex/katex.min.css">
+<script src="/katex/katex.min.js"></script>
+<link rel="stylesheet" href="<%= themeConfig.domain %>/styles/main.css">
+
+<% if (typeof commentSetting !== 'undefined' && commentSetting.showComment) { %>
+  <% if (commentSetting.commentPlatform === 'gitalk') { %>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css" />
+  <% } %>
+
+  <% if (commentSetting.commentPlatform === 'disqus') { %>
+    <link rel="stylesheet" href="https://unpkg.com/disqusjs@1.1/dist/disqusjs.css" />
+  <% } %>
+<% } %>
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+<script src="https://unpkg.com/vue@2.7.16/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+
+<% if (site.customConfig.ga) { %>
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%= site.customConfig.ga %>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '<%= site.customConfig.ga %>');
+</script>
+<% } %>
+
+
+<link rel="stylesheet" href="/jquery-3.7.1.min.js">
+<script src='/valine.js'></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/clipboard.js/2.0.11/clipboard.min.js"></script>
